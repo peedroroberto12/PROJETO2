@@ -47,35 +47,30 @@ int main(void) {
     FILE *arquivo = fopen("banco.txt", "w+");
 
     for (int i = 0; i < line; i++) {
-        char linha1[100]; 
+        char linha1[500]; 
         sprintf(linha1, "%s\n", data[i]); 
         fputs(linha1, arquivo); 
 
         for(k = 0; k < 24; k++) {
-            char linha2[100]; 
+            char linha2[500]; 
             sprintf(linha2, "%s %s\n", data[i], data[k]);  
             fputs(linha2, arquivo);  
 
             for(j = 0; j < 24; j++) {
-                char linha3[100];
+                char linha3[500];
                 sprintf(linha3, "%s %s %s\n", data[i], data[k], data[j]);
                 fputs(linha3, arquivo);
 
                 for(l = 0; l < 24; l++) {
-                    char linha4[100];
+                    char linha4[500];
                     sprintf(linha4, "%s %s %s %s\n", data[i], data[k], data[j], data[l]);
                     fputs(linha4, arquivo);
 
                     for(m = 0; m < 24; m++) {
-                        char linha5[100];
+                        char linha5[500];
                         sprintf(linha5, "%s %s %s %s %s\n", data[i], data[k], data[j], data[l], data[m]);
                         fputs(linha5, arquivo);
 
-                        for(n = 0; n < 24; n++) {
-                            char linha6[100];
-                            sprintf(linha6, "%s %s %s %s %s %s\n", data[i], data[k], data[j], data[l], data[m], data[n]);
-                            fputs(linha6, arquivo);
-                        }
                     }
                 }
             }
