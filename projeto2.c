@@ -7,6 +7,32 @@
 #define MAX_LINES 30
 #define MAX_LEN 30
 
+void buscarLinha(const char *nome_arquivo, const char *linha_procurada) {
+    FILE *arquivo = fopen(nome_arquivo, "r");  // Abre o arquivo no modo de leitura
+    if (arquivo == NULL) {
+        printf("Erro ao abrir o arquivo %s\n", nome_arquivo);
+        return;
+    }
+
+    char linha[256];  // Buffer para armazenar cada linha do arquivo
+    while (fgets(linha, sizeof(linha), arquivo)) {  // Lê linha por linha do arquivo
+        // Remove o caractere de nova linha no final (caso exista)
+        size_t len = strlen(linha);
+        if (len > 0 && linha[len - 1] == '\n') {
+            linha[len - 1] = '\0';
+        }
+
+        if (strcmp(linha, linha_procurada) == 0) {  // Compara a linha lida com a linha procurada
+            printf("Encontrado\n");
+            fclose(arquivo);
+            return;  // Linha encontrada, encerra a função
+        }
+    }
+
+    printf("Não encontrado\n");
+    fclose(arquivo);
+}
+
 void codificar(char str[89]) {
     SHA512_CTX ctx;
     unsigned char buffer[SHA512_DIGEST_LENGTH];  
