@@ -13,6 +13,7 @@
 
 
 int contaPalavra(const char *palavra) {
+
     int contador = 0;
     for (int i = 0; palavra[i] != '\0'; i++) {
         contador++;
@@ -21,6 +22,7 @@ int contaPalavra(const char *palavra) {
 }
 
 void limparString(char *str) {
+    
     size_t len = strlen(str);
     if (len > 0 && str[len - 1] == '\n') {
         str[len - 1] = '\0';
@@ -77,16 +79,19 @@ int buscarLinha(const char *linha_procurada, char *usuario) {
     char *senha_codificada;
 
     while (fgets(linha, sizeof(linha), arquivo)) {
+
         limparString(linha);
 
         char *usuario_atual = linha;
         senha_codificada = strchr(linha, ':');
 
         if (senha_codificada != NULL) {
+
             *senha_codificada = '\0';
             senha_codificada++;
 
             limparString(usuario_atual);
+
             limparString(senha_codificada);
 
             if (compararStrings(senha_codificada, linha_procurada) == 1) {
