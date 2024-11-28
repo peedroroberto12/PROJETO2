@@ -10,7 +10,7 @@
 
 //Palavras tentadas:brownie hamburguer arroz feijao batata sushi macarrao lasanha salmao temaki coxinha gelatina Tapioca Torrada refrigerante
 //Faltou encontrar as palavras corretas
-// projeto 2 por Pedro Roberto Fernandes Noronha e  Pedro Daniel Reis de Souza
+// projeto 2 por Pedro Roberto Fernandes Noronha e Gabriel Tortolio e  Pedro Daniel Reis de Souza
 
 int contaPalavra(const char *palavra) {
 
