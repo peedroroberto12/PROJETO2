@@ -132,12 +132,12 @@ int main(void) {
         char linha1[500];
         sprintf(linha1, "%s", data[i]);
 
-        char linha1h[512];
+        char linha1h[500];
         codificar(linha1, linha1h);
 
         limparString(linha1h);
 
-        char usuario[256];
+        char usuario[250];
         if (buscarLinha(linha1h, usuario)) {
             fprintf(saida, "%s: %s\n", usuario, linha1);
         }
@@ -146,7 +146,7 @@ int main(void) {
             char linha2[500];
             sprintf(linha2, "%s %s", data[i], data[k]);
 
-            char linha2h[512];
+            char linha2h[500];
             codificar(linha2, linha2h);
 
             limparString(linha2h);
@@ -159,7 +159,7 @@ int main(void) {
                 char linha3[500];
                 sprintf(linha3, "%s %s %s", data[i], data[k], data[l]);
 
-                char linha3h[512];
+                char linha3h[500];
                 codificar(linha3, linha3h);
 
                 limparString(linha3h);
@@ -172,7 +172,7 @@ int main(void) {
                     char linha4[500];
                     sprintf(linha4, "%s %s %s %s", data[i], data[k], data[l], data[m]);
 
-                    char linha4h[512];
+                    char linha4h[500];
                     codificar(linha4, linha4h);
 
                     limparString(linha4h);
@@ -185,7 +185,7 @@ int main(void) {
                         char linha5[500];
                         sprintf(linha5, "%s %s %s %s %s", data[i], data[k], data[l], data[m], data[n]);
 
-                        char linha5h[512];
+                        char linha5h[500];
                         codificar(linha5, linha5h);
 
                         limparString(linha5h);
